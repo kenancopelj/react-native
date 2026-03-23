@@ -91,7 +91,7 @@ export default function PassByValueReference() {
       <View style={screenStyles.demoCard}>
         <Text style={screenStyles.demoTitle}>Objects — Pass by Reference</Text>
         <View style={screenStyles.codeBlock}>
-          <Text style={screenStyles.code}>{OBJECT_CODE}</Text>
+          <Text style={screenStyles.code}>{objectCode}</Text>
         </View>
         <TouchableOpacity
           style={[screenStyles.runBtn, styles.runBtnRed]}
