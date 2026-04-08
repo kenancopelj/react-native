@@ -1,8 +1,8 @@
-import { FlatList, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import { FlatList, View } from "react-native";
+import { useRouter } from "expo-router";
 
-import { ConceptCard } from '@/components/ConceptCard';
-import { JS_CONCEPTS } from '@/constants/concepts';
+import { ConceptCard } from "@/components/ConceptCard";
+import { JS_CONCEPTS } from "@/constants/concepts";
 
 export default function JavaScriptScreen() {
   const router = useRouter();

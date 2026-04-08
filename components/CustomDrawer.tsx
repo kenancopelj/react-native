@@ -1,11 +1,14 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { DrawerContentScrollView, type DrawerContentComponentProps } from '@react-navigation/drawer';
+import { View, Text, TouchableOpacity } from "react-native";
+import {
+  DrawerContentScrollView,
+  type DrawerContentComponentProps,
+} from "@react-navigation/drawer";
 
 const DRAWER_ITEMS = [
-  { name: 'javascript', label: 'JavaScript' },
-  { name: 'es6', label: 'ES6' },
-  { name: 'react-native-course', label: 'React Native' },
-  { name: 'expo-course', label: 'Expo' },
+  { name: "javascript", label: "JavaScript" },
+  { name: "es6", label: "ES6" },
+  { name: "react-native-course", label: "React Native" },
+  { name: "expo-course", label: "Expo" },
 ] as const;
 
 export function CustomDrawer(props: DrawerContentComponentProps) {
@@ -22,11 +25,11 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
         return (
           <TouchableOpacity
             key={item.name}
-            className={`border-b border-gray-100 px-5 py-4 ${isActive ? 'bg-blue-50' : ''}`}
+            className={`border-b border-gray-100 px-5 py-4 ${isActive ? "bg-blue-50" : ""}`}
             onPress={() => props.navigation.navigate(item.name)}
           >
             <Text
-              className={`text-base ${isActive ? 'font-bold text-primary' : 'font-medium text-gray-700'}`}
+              className={`text-base ${isActive ? "font-bold text-primary" : "font-medium text-gray-700"}`}
             >
               {item.label}
             </Text>

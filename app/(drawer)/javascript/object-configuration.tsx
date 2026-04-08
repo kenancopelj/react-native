@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { DemoSection } from '@/components/DemoSection';
-import { LessonScreen } from '@/components/LessonScreen';
-import { ResultBox } from '@/components/ResultBox';
+import { DemoSection } from "@/components/DemoSection";
+import { LessonScreen } from "@/components/LessonScreen";
+import { ResultBox } from "@/components/ResultBox";
 
 const CODE = `const obj = {}
 
@@ -14,15 +14,18 @@ Object.defineProperty(obj, "name", {
 })`;
 
 const obj: Record<string, string> = {};
-Object.defineProperty(obj, 'name', {
-  value: 'John',
+Object.defineProperty(obj, "name", {
+  value: "John",
   writable: false,
   enumerable: true,
   configurable: false,
 });
 
 export default function ObjectConfiguration() {
-  const [modifyResult, setModifyResult] = useState<{ before: string; after: string } | null>(null);
+  const [modifyResult, setModifyResult] = useState<{
+    before: string;
+    after: string;
+  } | null>(null);
   const [keysResult, setKeysResult] = useState<string[] | null>(null);
   const [deleteResult, setDeleteResult] = useState<{
     deleted: boolean;
@@ -32,7 +35,7 @@ export default function ObjectConfiguration() {
   const tryModify = () => {
     const before = obj.name;
     try {
-      (obj as Record<string, string>).name = 'Mike';
+      (obj as Record<string, string>).name = "Mike";
     } catch {
       // writable: false silently ignores in non-strict mode
     }
@@ -54,12 +57,12 @@ export default function ObjectConfiguration() {
       code={CODE}
       links={[
         {
-          label: 'Docs',
-          url: 'https://medium.com/@shrijan00003/javascript-object-properties-writable-enumerable-configurable-eced27378256',
+          label: "Docs",
+          url: "https://medium.com/@shrijan00003/javascript-object-properties-writable-enumerable-configurable-eced27378256",
         },
         {
-          label: 'Video',
-          url: 'https://www.youtube.com/watch?v=LD1tQEWsjz4',
+          label: "Video",
+          url: "https://www.youtube.com/watch?v=LD1tQEWsjz4",
         },
       ]}
     >
@@ -70,7 +73,10 @@ export default function ObjectConfiguration() {
         result={
           modifyResult ? (
             <ResultBox
-              lines={[`before: "${modifyResult.before}"`, `after: "${modifyResult.after}" ← unchanged`]}
+              lines={[
+                `before: "${modifyResult.before}"`,
+                `after: "${modifyResult.after}" ← unchanged`,
+              ]}
             />
           ) : undefined
         }
@@ -82,7 +88,9 @@ export default function ObjectConfiguration() {
         onPress={listKeys}
         result={
           keysResult ? (
-            <ResultBox lines={[`[${keysResult.map((k) => `"${k}"`).join(', ')}]`]} />
+            <ResultBox
+              lines={[`[${keysResult.map((k) => `"${k}"`).join(", ")}]`]}
+            />
           ) : undefined
         }
       />

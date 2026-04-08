@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { DemoSection } from '@/components/DemoSection';
-import { LessonScreen } from '@/components/LessonScreen';
-import { ResultBox } from '@/components/ResultBox';
+import { DemoSection } from "@/components/DemoSection";
+import { LessonScreen } from "@/components/LessonScreen";
+import { ResultBox } from "@/components/ResultBox";
 
 const CODE = `const animal = {
   speak() {
@@ -20,7 +20,7 @@ export default function PrototypicalInheritance() {
   const run = () => {
     const animal = {
       speak() {
-        return 'Animal speaks';
+        return "Animal speaks";
       },
     };
     const dog = Object.create(animal) as typeof animal;
@@ -33,12 +33,12 @@ export default function PrototypicalInheritance() {
       code={CODE}
       links={[
         {
-          label: 'Docs',
-          url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain',
+          label: "Docs",
+          url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain",
         },
         {
-          label: 'Video',
-          url: 'https://www.youtube.com/watch?v=wstwjQ1yqWQ',
+          label: "Video",
+          url: "https://www.youtube.com/watch?v=wstwjQ1yqWQ",
         },
       ]}
     >

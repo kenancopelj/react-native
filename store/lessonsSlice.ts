@@ -1,6 +1,6 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface LessonsState {
   completed: Record<string, boolean>;
@@ -11,7 +11,7 @@ const initialState: LessonsState = {
 };
 
 const lessonsSlice = createSlice({
-  name: 'lessons',
+  name: "lessons",
   initialState,
   reducers: {
     markComplete(state, action: PayloadAction<string>) {
@@ -26,7 +26,7 @@ const lessonsSlice = createSlice({
 export const { markComplete, markIncomplete } = lessonsSlice.actions;
 
 const persistConfig = {
-  key: 'lessons',
+  key: "lessons",
   storage: AsyncStorage,
 };
 

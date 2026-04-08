@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { CodeBlock } from '@/components/CodeBlock';
-import { DemoSection } from '@/components/DemoSection';
-import { LessonScreen } from '@/components/LessonScreen';
-import { ResultBox } from '@/components/ResultBox';
+import { CodeBlock } from "@/components/CodeBlock";
+import { DemoSection } from "@/components/DemoSection";
+import { LessonScreen } from "@/components/LessonScreen";
+import { ResultBox } from "@/components/ResultBox";
 
 const PRIMITIVE_CODE = `let a = 10
 let b = a   // copy of the value
@@ -16,8 +16,14 @@ obj2.name = "Mike"
 // obj1.name is now "Mike"`;
 
 export default function PassByValueReference() {
-  const [primitiveResult, setPrimitiveResult] = useState<{ a: number; b: number } | null>(null);
-  const [objectResult, setObjectResult] = useState<{ obj1: string; obj2: string } | null>(null);
+  const [primitiveResult, setPrimitiveResult] = useState<{
+    a: number;
+    b: number;
+  } | null>(null);
+  const [objectResult, setObjectResult] = useState<{
+    obj1: string;
+    obj2: string;
+  } | null>(null);
 
   const runPrimitive = () => {
     let a = 10;
@@ -27,9 +33,9 @@ export default function PassByValueReference() {
   };
 
   const runObject = () => {
-    const obj1 = { name: 'John' };
+    const obj1 = { name: "John" };
     const obj2 = obj1;
-    obj2.name = 'Mike';
+    obj2.name = "Mike";
     setObjectResult({ obj1: obj1.name, obj2: obj2.name });
   };
 
@@ -38,12 +44,12 @@ export default function PassByValueReference() {
       explanation="Primitives (numbers, strings, booleans) are passed by value — a copy is made. Objects and arrays are passed by reference — both variables point to the same memory location."
       links={[
         {
-          label: 'Docs',
-          url: 'https://dev-aditya.medium.com/pass-by-value-and-pass-by-reference-in-javascript-7b4b3d59f629',
+          label: "Docs",
+          url: "https://dev-aditya.medium.com/pass-by-value-and-pass-by-reference-in-javascript-7b4b3d59f629",
         },
         {
-          label: 'Video',
-          url: 'https://www.youtube.com/watch?v=-hBJz2PPIVE',
+          label: "Video",
+          url: "https://www.youtube.com/watch?v=-hBJz2PPIVE",
         },
       ]}
     >
@@ -54,7 +60,10 @@ export default function PassByValueReference() {
         result={
           primitiveResult ? (
             <ResultBox
-              lines={[`a = ${primitiveResult.a} ← unchanged`, `b = ${primitiveResult.b}`]}
+              lines={[
+                `a = ${primitiveResult.a} ← unchanged`,
+                `b = ${primitiveResult.b}`,
+              ]}
             />
           ) : undefined
         }

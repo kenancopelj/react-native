@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   FLUSH,
@@ -7,8 +7,8 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import lessonsReducer from './lessonsSlice';
+} from "redux-persist";
+import lessonsReducer from "./lessonsSlice";
 
 export const store = configureStore({
   reducer: {
